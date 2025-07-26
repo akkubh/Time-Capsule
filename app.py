@@ -11,8 +11,8 @@ NOTES = [
     "Accepted! Hope your future self giggles!",
     "That was questionable... Approved.",
     "Emotionally encrypted. Success.",
-    "The cat ate ur message sorry:(...kidding! Accepted!",
-    "Your thoughts wil now start fermenting. Success"
+    "The cat ate ur message sorry :( ...kidding! Accepted!",
+    "Your thoughts will now start fermenting. Success"
 ]
 
 #connect to sql
@@ -59,8 +59,7 @@ def login():
         session["user_id"] = user["username"]
         return jsonify({"message": "Login Successful!"})
     else:
-        return jsonify("error": "Invalid login"), 401
-
+        return jsonify({"error": "Invalid login"}), 401
 #logout
 @app.route("/logout", methods = ["POST"])
 def logout():
