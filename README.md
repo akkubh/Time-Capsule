@@ -28,11 +28,9 @@ Built under the hackathon theme** “Make Anything, But Make It You”**, this p
 
 | Layer         | Tech Used                          |
 |---------------|------------------------------------|
-| **Frontend**  | HTML, CSS, Bootstrap/Tailwind, JS  |
+| **Frontend**  | HTML, CSS, JS  |
 | **Backend**   | Python, Flask                      |
-| **Database**  | SQLite (for demo), PostgreSQL (optional) |
-| **AI (Optional)** | OpenAI GPT-4 API for reflections |
-| **Voice** (Optional) | gTTS, Whisper, or ElevenLabs |
+| **Database**  | SQLite (for demo) |
 | **Scheduler** | APScheduler / Cron jobs            |
 | **Deployment**| Render / Railway / Heroku          |
 
