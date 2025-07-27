@@ -6,6 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key ='highly_secure_uncrackable_key_no_one_can_guess'
 
+
 #return messages
 NOTES = [
     "Accepted! Hope your future self giggles!",
@@ -15,11 +16,13 @@ NOTES = [
     "Your thoughts will now start fermenting. Success"
 ]
 
+
 #connect to sql
 def get_db():
     conn = sqlite3.connect("database.db")
     conn.row_factory = sqlite3.Row
     return conn
+
 
 #signup
 @app.route("/signup", methods = ["POST"])
@@ -43,6 +46,7 @@ def signup():
     finally:
         conn.close()
 
+
 #logging in
 @app.route("/login", methods = ["POST"])
 def login():
@@ -60,11 +64,15 @@ def login():
         return jsonify({"message": "Login Successful!"})
     else:
         return jsonify({"error": "Invalid login"}), 401
+    
+
 #logout
 @app.route("/logout", methods = ["POST"])
 def logout():
     session.pop("user_id", None)
     return jsonify({"message": "Logged out"})
+
+
 
 #creating capsules
 @app.route("/create_capsule", methods = ["POST"])
