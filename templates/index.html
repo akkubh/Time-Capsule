@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time-Capsule</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="img\IMG_0521.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/IMG_0521.jpg') }}">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <nav class="navbar-container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="img\IMG_0521.jpg" alt="logo">
+                    <img src="{{ url_for('static', filename='img/IMG_0521.jpg') }}" alt="logo">
                 </div>
                 <a href="#home">Home</a>
                 <a href="#inside-the-capsule">Inside the Capsule</a>
@@ -49,11 +49,11 @@
             </div>
 
             <div class="step-image-row">
-                <img src="img/login.jpg" alt="login">
+                <img src="{{ url_for('static', filename='img/login.jpg') }}" alt="login">
                 <img src="https://www.shutterstock.com/image-vector/content-forms-combined-multimedia-set-600nw-260458196.jpg"
                     alt="text,vid,aud,img">
-                <img src="img/date-select.jpg" alt="date-select">
-                <img src="img/time-capsule.jpeg" alt="time-capsule">
+                <img src="{{ url_for('static', filename='img/date-select.jpg') }}" alt="date-select">
+                <img src="{{ url_for('static', filename='img/time-capsule.jpeg') }}" alt="time-capsule">
             </div>
         </section>
 
@@ -113,7 +113,7 @@
                     <form id="signupForm">
                         <input type="text" id="signupUsername" placeholder="Username" required>
                         <input type="password" id="signupPassword" placeholder="Password" required>
-                        <button type="submit"><a href="dashboard.html">Register</a></button>
+                        <button type="submit">Register</button>
                     </form>
                 </div>
             </div>
@@ -287,7 +287,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 
 </html>
