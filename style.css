@@ -195,7 +195,7 @@ body {
 .step-image-row {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 80px;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
