@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, session
 import random
 import sqlite3
-from flask import render_template
+from flask import render_template, redirect, url_for
 from datetime import datetime
 from db_utils import get_db
 
@@ -11,6 +11,12 @@ app.secret_key ='highly_secure_uncrackable_key_no_one_can_guess'
 @app.route("/")
 def serve_index():
     return render_template("index.html")
+
+@app.route("/dashboard")
+def dashboard():
+    if "user_id" not in session:
+        return redirect(url_for("serve_index"))  # Or redirect to home/login
+    return render_template("dashboard.html")
 
 #return messages
 NOTES = [

@@ -76,7 +76,7 @@ if (loginForm) {
 
       if (res.ok) {
         alert("Logged in");
-        window.location.href = "dashboard.html";
+        window.location.href = "/dashboard";
         loginForm.reset();
         closePopup("loginPopup");
 

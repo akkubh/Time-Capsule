@@ -120,6 +120,7 @@
         </section>
 
         <!--Create a Capsule-->
+        {% if session.get('username') %}
         <section id="create-capsule">
             <h2>Create a Capsule</h2>
             <form id="capsuleForm">
@@ -140,6 +141,7 @@
                 <button type="submit">Save Capsule</button>
             </form>
         </section>
+        {% endif %}
 
         <!--View capsules-->
         <section id="view-capsules">
