@@ -11,7 +11,7 @@ TimeCapsuleYou is a personalized digital time capsule that lets users write mess
 
 ## 🧠 Inspiration
 
-Built under the hackathon theme** “Make Anything, But Make It You”**, this project reflects personal memories, emotions, and moments — turning tech into a mirror of your unique self.
+Built under the hackathon theme “Make Anything, But Make It You”, this project reflects personal memories, emotions, and moments — turning tech into a mirror of your unique self.
 
 ---
 
@@ -75,5 +75,7 @@ Built under the hackathon theme** “Make Anything, But Make It You”**, this p
 3. 📱 Create a mobile-friendly PWA
 
 4. 🧬 Use AI to generate letters/messages based on mood
+
+5. A collabrative feature where many users can create a capsule as a group.
 
 ---
