@@ -8,15 +8,14 @@ from db_utils import get_db
 app = Flask(__name__, template_folder="templates")
 app.secret_key ='highly_secure_uncrackable_key_no_one_can_guess'
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
 @app.route("/")
 def serve_index():
     return render_template("index.html")
 
-@app.route("/dashboard")
-def dashboard():
-    if "user_id" not in session:
-        return redirect(url_for("serve_index"))  # Or redirect to home/login
-    return render_template("dashboard.html")
 
 #return messages
 NOTES = [
