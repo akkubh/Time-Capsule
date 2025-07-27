@@ -63,6 +63,7 @@ header {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    padding-bottom: 0px;
 }
 
 .hero-bg {
@@ -152,8 +153,10 @@ body {
     text-align: center;
     margin: 20px 40px;
     /* reduced margin */
-    padding-top: 30px;
+    padding-top: 10px;
     /* decreased from default large values */
+    margin-top: -60px;
+    padding-bottom: 20px;
 }
 
 #inside-the-capsule h2 {
@@ -230,6 +233,10 @@ body {
     font-size: 1em;
     line-height: 1.6;
     color: #e0e0e0;
+}
+
+#the-human-side span.column p i {
+    color: darkorange;
 }
 
 #the-human-side {
@@ -349,7 +356,55 @@ body {
     cursor: pointer;
 }
 
+.faq-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
 
+.faq-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #61b3ea;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  border-top: 1px solid #e2e2e2;
+  padding: 15px 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+  padding-right: 30px;
+  color: #ffffff;
+}
+
+.faq-question .arrow {
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+
+.faq-question.active .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.5;
+}
 
 footer {
     background-color: #000000;
