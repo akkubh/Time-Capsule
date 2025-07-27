@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
 .fuzzy-text {
     position: relative;
     color: white;
@@ -17,22 +25,30 @@
     0% {
         text-shadow: 2px 0 rgb(0, 47, 255), -2px 0 cyan;
     }
+
     33% {
         text-shadow: -2px 0 rgb(0, 47, 255), 2px 0 cyan;
     }
+
     66% {
         text-shadow: 0 2px rgb(0, 47, 255), 0 -2px cyan;
     }
+
     100% {
         text-shadow: 0 0 rgb(0, 47, 255), 0 0 cyan;
     }
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 1000;
+    background-color: rgba(94, 101, 107, 0.9);
+    /* or any bg you like */
+    backdrop-filter: blur(8px);
+    /* optional: gives frosted glass look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
@@ -152,7 +168,7 @@ header {
 }
 
 body {
-    background: linear-gradient(135deg, #0f0c29, #2b266b, #0f0f7d);
+    background: linear-gradient(180deg, #f3e8ff, #e5d4f9, #ccc1e3);
     background-size: 400% 400%;
     animation: dreamyBG 15s ease infinite;
     color: white;
@@ -185,7 +201,7 @@ body {
 #inside-the-capsule h2 {
     margin-bottom: 40px;
     font-size: 2em;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 0;
     padding-top: 0;
     text-align: center;
@@ -203,8 +219,8 @@ body {
 .step-text-row p {
     margin-bottom: 25px;
     width: 200px;
-    color: white;
-    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-size: 1.25em;
     text-align: center;
 }
 
@@ -217,10 +233,13 @@ body {
 
 #the-human-side {
     padding: 60px 20px;
-    background: #0d0d0d;
-    /* dark background for better glow visibility */
-    color: #fff;
+    background: transparent; /* Use the website's existing background */
+    color: #000000;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 #the-human-side h2 {
@@ -229,45 +248,39 @@ body {
 }
 
 #the-human-side .column {
-    background: rgba(255, 255, 255, 0.05);
-    /* subtle transparent background */
+    background: rgba(255, 255, 255, 0.05); /* translucent background */
     border-radius: 15px;
     padding: 25px;
     margin: 10px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-    /* cyan glow */
+    box-shadow: 0 0 25px rgba(0, 94, 255, 0.4); /* cyan glow */
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #the-human-side .column:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 35px rgba(0, 255, 255, 0.8);
-    /* brighter glow on hover */
+    box-shadow: 0 0 35px rgba(0, 94, 255, 0.4); /* brighter glow */
 }
 
-#the-human-side span.column h3 {
+#the-human-side .column h3 {
     margin-bottom: 15px;
     font-size: 1.5em;
-    color: #00ffff;
+    color: rgba(0, 94, 255, 0.8); /* stronger, more readable blue */
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-#the-human-side span.column p {
+
+#the-human-side .column p {
     font-size: 1em;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #000000;
 }
 
-#the-human-side span.column p i {
-    color: darkorange;
+#the-human-side .column p i {
+    color: rgb(255, 102, 0);
 }
 
-#the-human-side {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
 
 /* Section Styling */
 /* Login/Signup Section */
@@ -281,10 +294,12 @@ body {
 #login-signup h2 {
     margin-bottom: 15px;
     text-align: center;
+    color: #000000;
 }
 
 #login-signup p {
     text-align: center;
+    color: #000000;
 }
 
 /* Button Container */
@@ -300,7 +315,7 @@ body {
 .divider {
     width: 2px;
     height: 30px;
-    background-color: #ccc;
+    background-color: #000000;
 }
 
 /* Login/Signup Buttons */
@@ -380,53 +395,53 @@ body {
 }
 
 .faq-section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-family: 'Segoe UI', sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .faq-section h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #61b3ea;
-  margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0c85d6;
+    margin-bottom: 30px;
 }
 
 .faq-item {
-  border-top: 1px solid #e2e2e2;
-  padding: 15px 0;
+    border-top: 1px solid #e2e2e2;
+    padding: 15px 0;
 }
 
 .faq-question {
-  background: none;
-  border: none;
-  font-size: 18px;
-  font-weight: 600;
-  width: 100%;
-  text-align: left;
-  position: relative;
-  cursor: pointer;
-  padding-right: 30px;
-  color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px;
+    color: #000000;
 }
 
 .faq-question .arrow {
-  position: absolute;
-  right: 0;
-  transition: transform 0.3s;
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s;
 }
 
 .faq-question.active .arrow {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .faq-answer {
-  display: none;
-  margin-top: 10px;
-  font-size: 16px;
-  color: #ffffff;
-  line-height: 1.5;
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
 }
 
 footer {
@@ -442,6 +457,12 @@ footer {
 .footer-content {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.footer-content h2 {
+    color: white;
+    text-align: center;
+    font-size: 35px;
 }
 
 .footer-content p {
