@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Capsule</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img\IMG_0521.jpg">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="img\IMG_0521.jpg" alt="logo">
+                </div>
+                <a href="#home">Home</a>
+                <a href="#inside-the-capsule">Inside the Capsule</a>
+                <a href="#the-human-side">The Human Side</a>
+                <a href="#login-signup">Login/Sign-up</a>
+                <a href="#FAQs">FAQs</a>
+                <a href="#contact-us">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="home">
+            <img src="https://media.istockphoto.com/id/1410072132/vector/futuristic-sci-fi-glowing-hud-time-fading-abstract-time-machine-and-polygon-hi-tech.jpg?s=612x612&w=0&k=20&c=HHkKnTeojU9jQz4vbscdNx_YY70Ops63PHBxDY7XGxA="
+                alt="hero-section-bg" class="hero-bg" />
+            <div class="hero-content">
+                <h1 class="fuzzy-text">TimeCapsuleYou</h1>
+                <h2 class="fuzzy-text">Store your story to your future self.</h2>
+                <a href="#login-signup" class="cta-button">Create Your Capsule</a>
+            </div>
+        </section>
+
+        <section id="inside-the-capsule">
+            <h2>Inside the Capsule</h2>
+
+            <div class="step-text-row">
+                <p>1. Login</p>
+                <p>2. Add your message like- text, video, audios or pictures</p>
+                <p>3. Select the desired date</p>
+                <p>4. Open the capsule once the time period gets over</p>
+            </div>
+
+            <div class="step-image-row">
+                <img src="img/login.jpg" alt="login">
+                <img src="https://www.shutterstock.com/image-vector/content-forms-combined-multimedia-set-600nw-260458196.jpg"
+                    alt="text,vid,aud,img">
+                <img src="img/date-select.jpg" alt="date-select">
+                <img src="img/time-capsule.jpeg" alt="time-capsule">
+            </div>
+        </section>
+
+
+        <section id="the-human-side">
+            <h2>The Human Side</h2>
+            <span class="column">
+                <h3>Emotions captured in Time</h3>
+                <p>This capsule holds your raw, honest feelings — love, hope, fear, joy. These aren’t just memories,
+                    they’re emotions only you can truly understand. AI may store data, but it can never feel what it
+                    means to miss someone or dream big. <i>That’s what makes this human.</i></p>
+            </span>
+            <span class="column">
+                <h3>The Journey Within</h3>
+                <p>As time passes, you change — your thoughts, your dreams, your scars. This is your space to speak to
+                    yourself, to grow, to heal. Machines can't feel growth or pain — only you know your real story.
+                    <i>This
+                        is your human journey, written by your soul.</i>
+                </p>
+            </span>
+            <span class="column">
+                <h3>Connecting across Time</h3>
+                <p>Your words can comfort future you or someone else. A hug through time, a reminder that you mattered,
+                    and you loved deeply. No AI can offer that kind of warmth. <i>Only humans can leave behind something
+                        so real.</i></p>
+            </span>
+        </section>
+
+
+        <section id="login-signup">
+            <h2>Login / Sign Up</h2>
+            <p>Start creating a capsule for your future. Click on Login if you're an existing user or Sign Up if you're
+                a new user.</p>
+
+            <div class="button-container">
+                <button onclick="openPopup('loginPopup')">Login</button>
+                <div class="divider"></div>
+                <button onclick="openPopup('signupPopup')">Sign Up</button>
+            </div>
+
+            <div id="loginPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input type="text" id="loginUsername" placeholder="Username" required>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <button type="submit"><a href="dashboard.html">Submit</a></button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="signupPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+                    <h2>Sign Up</h2>
+                    <form id="signupForm">
+                        <input type="text" id="signupUsername" placeholder="Username" required>
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <button type="submit"><a href="dashboard.html">Register</a></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create a Capsule
+        <section id="create-capsule">
+            <h2>Create a Capsule</h2>
+            <form id="capsuleForm">
+                <textarea id="capsuleForm" placeholder="Type ur message..." required></textarea><br />
+                <input type="datetime-local" id = "capsuleUnlockTime" required><br />
+
+                <select id="capsuleMood" required>
+                    <option value="happy">😊 Happy</option>
+                    <option value="sad">😔Sad</option>
+                    <option value="anxious">😰 Anxious</option>
+                    <option value="goblin">👹 Goblin Mode</option>
+                    <option value="nostalgic">💭 Nostalgic</option>
+                    <option value="shock">😱 Shock</option>
+                    <option value="custom">Type your own...</option>
+                </select><br />
+
+                <input type="text" id="customMood" placeholder="Enter your mood..." style="display: none;" /><br />
+                <button type="submit">Save Capsule</button>
+            </form>
+        </section>
+
+         View capsules
+        <section id="view-capsules">
+            <h2>Your Capsules</h2>
+            <div id="capsuleList">
+                insert capsule-
+            </div>
+        </section> -->
+
+        <!--Logout-->
+        <!-- <section id="logout">
+            <h2>Logout</h2>
+            <button id="logoutButton">Logout</button>
+        </section> -->
+
+        <hr>
+        <section id="FAQs">
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <!-- question1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is TimeCapsuleYou and how does it work?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        TimeCapsuleYou is a platform where users can store digital memories and messages for the
+                        future. You can create a "capsule" that will be sent or opened on a specific date.
+                    </div>
+                </div>
+
+                <!-- ques2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is this platform free to use?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, it is free to use although you have to make an account for yourself.
+                    </div>
+                </div>
+
+                <!-- ques3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my data secure on TimeCapsuleYou?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely, your privacy is our biggest concern and we use encryption and secure servers to
+                        ensure your data remains private and protected
+                        until it's time to be revealed.
+                    </div>
+                </div>
+
+                <!-- ques4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I password-protect my capsule?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        You can definitely add the option of password-protect when during capsule creation.
+                    </div>
+                </div>
+
+                <!-- ques5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I edit or delete a capsule once created?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        No, you cannot edit your capsules but you can delete them and remake it once again.
+                    </div>
+                </div>
+
+                <!-- ques 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I schedule multiple capsules?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        You can certainly create more than one capsules at a time by clicking on the add new option in
+                        your dashboard.
+                    </div>
+                </div>
+
+                <!-- ques7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will I be notified when my capsule unlocks?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, you will receive an email notification in your registered email inbox.
+                    </div>
+                </div>
+
+                <!-- ques8 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there an option to create group or collaborative capsules?
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        We have not yet come up with such feature but it is definitely one of our upcoming feature launch ideas.
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" id="contact-us">
+            <h2>Contact Us</h2>
+            <p>© 2025 TimeCapsuleYou. All rights reserved.</p>
+            <p>Made by Team TimeCapsuleYou</p>
+            <ul>
+                <li>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.com" target="_blank" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:timecapsuleyou.team@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
