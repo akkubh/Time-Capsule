@@ -238,18 +238,18 @@ body {
 }
 
 /* Section Styling */
-#login-signup {
+#login/signup {
     text-align: center;
     padding: 40px;
     font-family: Arial, sans-serif;
 }
 
-#login-signup h2 {
+#login/signup h2 {
     margin-bottom: 20px; /* Increase this value for more space */
     text-align: center;
 }
 
-#login-signup p {
+#login/signup p {
     text-align: center;
 }
 
@@ -270,7 +270,7 @@ body {
 }
 
 /* Buttons */
-#login-signup button {
+#login/signup button {
     padding: 10px 25px;
     font-size: 16px;
     cursor: pointer;
@@ -281,7 +281,7 @@ body {
     transition: background 0.3s ease;
 }
 
-#login-signup button:hover {
+#login/signup button:hover {
     background-color: #273e9c;
 }
 
