@@ -150,8 +150,10 @@ body {
 
 #inside-the-capsule {
     text-align: center;
-     margin: 20px 40px; /* reduced margin */
-    padding-top: 30px; /* decreased from default large values */
+    margin: 20px 40px;
+    /* reduced margin */
+    padding-top: 30px;
+    /* decreased from default large values */
 }
 
 #inside-the-capsule h2 {
@@ -238,18 +240,20 @@ body {
 }
 
 /* Section Styling */
-#login/signup {
+/* Login/Signup Section */
+#login-signup {
     text-align: center;
-    padding: 40px;
+    padding: 30px 20px;
+    /* Reduced top padding */
     font-family: Arial, sans-serif;
 }
 
-#login/signup h2 {
-    margin-bottom: 20px; /* Increase this value for more space */
+#login-signup h2 {
+    margin-bottom: 15px;
     text-align: center;
 }
 
-#login/signup p {
+#login-signup p {
     text-align: center;
 }
 
@@ -269,8 +273,8 @@ body {
     background-color: #ccc;
 }
 
-/* Buttons */
-#login/signup button {
+/* Login/Signup Buttons */
+#login-signup button {
     padding: 10px 25px;
     font-size: 16px;
     cursor: pointer;
@@ -281,7 +285,7 @@ body {
     transition: background 0.3s ease;
 }
 
-#login/signup button:hover {
+#login-signup button:hover {
     background-color: #273e9c;
 }
 
@@ -348,7 +352,8 @@ body {
 
 
 footer {
-    background-color: #000000; /* Light grey background */
+    background-color: #000000;
+    /* Light grey background */
     padding: 30px 20px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -387,8 +392,10 @@ footer {
 }
 
 .footer-content ul li a:hover {
-    color: #0077b5; /* Change color on hover (LinkedIn blue) */
-    transform: scale(1.2); /* Slight zoom effect */
+    color: #0077b5;
+    /* Change color on hover (LinkedIn blue) */
+    transform: scale(1.2);
+    /* Slight zoom effect */
 }
 
 .footer-content a[href="#privacy"] {
