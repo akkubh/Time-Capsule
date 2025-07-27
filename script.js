@@ -5,7 +5,6 @@ function openPopup(id) {
   function closePopup(id) {
     document.getElementById(id).style.display = 'none';
   }
-  }
   
   const faqButtons = document.querySelectorAll('.faq-question');
 
