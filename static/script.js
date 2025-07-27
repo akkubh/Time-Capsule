@@ -30,8 +30,8 @@ if (signupForm) {
   signupForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const username = getElementById("signupUsername").value;
-    const password = getElementById("signupPassword").value;
+    const username = document.getElementById("signupUsername").value;
+    const password = document.getElementById("signupPassword").value;
 
     try {
       const res = await fetch("/signup", {
@@ -62,8 +62,8 @@ if (signupForm) {
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", async function (e) {
-    const username = getElementById("loginUsername").value;
-    const password = getElementById("loginPassword").value;
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
 
     try {
       const res = await fetch("/login", {
@@ -76,10 +76,11 @@ if (loginForm) {
 
       if (res.ok) {
         alert("Logged in");
-        signupForm.reset();
+        window.location.href = "dashboard.html";
+        loginForm.reset();
         closePopup("loginPopup");
 
-        loadCapsule();
+        loadCapsules();
       }
       else {
         alert(data.error || "Login Failed. Try again.");
@@ -121,15 +122,16 @@ if (logoutBtn) {
 
 // CREATING CAPSULE
 
-const createForm = document.getElementById("createCapsuleForm");
+const createForm = document.getElementById("capsuleForm");
 if (createForm) {
-  createFormform.addEventListener("submit", async function (e) {
+  createForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const message = document.getElementById("capsuleMessage").value;
     const unlockDate =document.getElementById("capsuleUnlockDate").value;
-    const moodSelect = moodSelect.value;
-    if (mood == "custom") {
+
+    let mood = document.getElementById("capsuleMood").value;
+    if (mood === "custom") {
       mood = document.getElementById("customMood").value;
     }
     
@@ -141,12 +143,12 @@ if (createForm) {
      try {
       const res = await fetch("/create_capsule", {
         method: "POST",
-        headers: { "content-Type": "application/json"},
+        headers: { "Content-Type": "application/json"},
         credentials: "include",
         body: JSON.stringify({
           message: message,
           unlockDate: unlockDate,
-          mood: modd
+          mood: mood
         })
       });
 
@@ -167,14 +169,18 @@ if (createForm) {
 }
 
 //CUSTOM MOOD INPUT
-document.getElementById("capsuleMood").addEventListener("change", function () {
-  const customMood = document.getElementById("customMoodContainer");
-  if (this.value === "custom") {
-    customMood.style.display = "block";
-  } else {
-    customMood.style.display = "none";
-  }
-});
+const moodSelect = document.getElementById("capsuleMood");
+if (moodSelect) {
+  moodSelect.addEventListener("change", function () {
+    const customMood = document.getElementById("customMood");
+    customMood.style.display = (this.value === "custom") ? "block" : "none";
+    if (this.value === "custom") {
+      customMood.style.display = "block";
+    } else {
+      customMood.style.display = "none";
+    }
+  });
+}
 
 //LOAD CAPSULE
 async function loadCapsules() {
