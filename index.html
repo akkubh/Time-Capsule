@@ -6,39 +6,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time-Capsule</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar-container">
             <div class="navbar">
-                <a href="#">Home</a>
-                <a href="#">Inside the Capsule</a>
-                <a href="#">The Human Side</a>
-                <a href="#">Try a Demo</a>
-                <a href="#">Login/Sign-up</a>
-                <a href="#">FAQs</a>
-                <a href="#">Contact Us</a>
+                <a href="#home">Home</a>
+                <a href="#inside-the-capsule">Inside the Capsule</a>
+                <a href="#the-human-side">The Human Side</a>
+                <a href="#try-a-demo">Try a Demo</a>
+                <a href="#login/signup">Login/Sign-up</a>
+                <a href="#FAQs">FAQs</a>
+                <a href="#contact-us">Contact Us</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-section">
+        <section class="hero-section" id="home">
             <img src="https://media.istockphoto.com/id/1410072132/vector/futuristic-sci-fi-glowing-hud-time-fading-abstract-time-machine-and-polygon-hi-tech.jpg?s=612x612&w=0&k=20&c=HHkKnTeojU9jQz4vbscdNx_YY70Ops63PHBxDY7XGxA="
                 alt="hero-section-bg" class="hero-bg" />
             <div class="hero-content">
                 <h1>TimeCapsuleYou</h1>
                 <p>Store your story to your future self.</p>
-                <a href="#create" class="cta-button">Create Your Capsule</a>
+                <a href="#login/signup" class="cta-button">Create Your Capsule</a>
             </div>
         </section>
 
+        <section id="inside-the-capsule">
+            <h2>Inside the Capsule</h2>
+
+            <div class="step-text-row">
+                <p>1. Login</p>
+                <p>2. Add your message like- text, video, audios or pictures</p>
+                <p>3. Select the desired date</p>
+                <p>4. Open the capsule once the time period gets over</p>
+            </div>
+
+            <div class="step-image-row">
+                <img src="img/login.jpg" alt="login">
+                <img src="https://www.shutterstock.com/image-vector/content-forms-combined-multimedia-set-600nw-260458196.jpg"
+                    alt="text,vid,aud,img">
+                <img src="img/date-select.jpg" alt="date-select">
+                <img src="img/time-capsule.jpeg" alt="time-capsule">
+            </div>
+        </section>
+
+
+        <section id="the-human-side">
+            <h2>The Human Side</h2>
+            <span class="column">
+                <h3>Emotions captured in Time</h3>
+                <p>This capsule holds your raw, honest feelings — love, hope, fear, joy. These aren’t just memories,
+                    they’re emotions only you can truly understand. AI may store data, but it can never feel what it
+                    means to miss someone or dream big. <i>That’s what makes this human.</i></p>
+            </span>
+            <span class="column">
+                <h3>The Journey Within</h3>
+                <p>As time passes, you change — your thoughts, your dreams, your scars. This is your space to speak to
+                    yourself, to grow, to heal. Machines can't feel growth or pain — only you know your real story.
+                    <i>This
+                        is your human journey, written by your soul.</i>
+                </p>
+            </span>
+            <span class="column">
+                <h3>Connecting across Time</h3>
+                <p>Your words can comfort future you or someone else. A hug through time, a reminder that you mattered,
+                    and you loved deeply. No AI can offer that kind of warmth. <i>Only humans can leave behind something
+                        so real.</i></p>
+            </span>
+        </section>
+
+        <section id="login-signup">
+            <h2>Login / Sign Up</h2>
+            <p>Start creating a capsule for your future. Click on Login if you're a new user or Sign Up if you're an
+                existing user.</p>
+
+            <div class="button-container">
+                <button onclick="openPopup('loginPopup')">Login</button>
+                <div class="divider"></div>
+                <button onclick="openPopup('signupPopup')">Sign Up</button>
+            </div>
+
+            <div id="loginPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button>Submit</button>
+                </div>
+            </div>
+
+            <div id="signupPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Username">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button>Register</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="FAQs">
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae facere labore nobis sunt esse.
+                    Nihil officia quaerat inventore suscipit mollitia dolores, eveniet tempore molestias tenetur
+                    adipisci quae cupiditate accusamus eaque in rem explicabo voluptatum facere possimus nemo aut omnis?
+                    Dolores tempora quam sit nulla, iusto eligendi quibusdam ea. Ea, voluptate repudiandae dolores hic
+                    fuga consequuntur aliquid. Sapiente qui, nulla a molestiae incidunt repellat nisi, soluta mollitia
+                    reiciendis eveniet, voluptates iusto corrupti fugit iure est nostrum tempore facilis modi. Nam non
+                    laboriosam pariatur nihil excepturi, optio eveniet dolorem consectetur doloremque, perferendis animi
+                    vitae aliquam. Exercitationem cum ea est, laboriosam blanditiis voluptatem!</p>
+            </div>
+        </section>
+        <hr>
     </main>
 
     <footer>
-
+        <div class="footer-content" id="contact-us">
+            <p>© 2025 TimeCapsuleYou. All rights reserved.</p>
+            <p>Made by Team TimeCapsuleYou</p>
+            <ul>
+                <li>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.com" target="_blank" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:timecapsuleyou.team@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
