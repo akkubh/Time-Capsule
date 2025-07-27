@@ -1,10 +1,20 @@
 from flask import Flask, request, jsonify, session
-import sqlite3
 import random
+import sqlite3
+from flask import render_template, redirect, url_for
 from datetime import datetime
+from db_utils import get_db
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.secret_key ='highly_secure_uncrackable_key_no_one_can_guess'
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/")
+def serve_index():
+    return render_template("index.html")
 
 
 #return messages
@@ -15,13 +25,6 @@ NOTES = [
     "The cat ate ur message sorry :( ...kidding! Accepted!",
     "Your thoughts will now start fermenting. Success"
 ]
-
-
-#connect to sql
-def get_db():
-    conn = sqlite3.connect("database.db")
-    conn.row_factory = sqlite3.Row
-    return conn
 
 
 #signup
@@ -128,7 +131,7 @@ def view_capsule():
         result.append({
             "id": i["id"],
             "message": i["message"] if is_unlocked else None,
-            "unlock_date": i["unlock_date"],
+            "unlock_date": i["unlock_date_time"],
             "created_at": i["creation_date"],
             "unlock_status": is_unlocked,
             "time_left": time_left
@@ -155,3 +158,6 @@ def delete_capsule():
     conn.close()
     
     return jsonify({"message": "Capsule deleted successfully"})
+
+if __name__ == "__main__":
+    app.run(debug=True)
