@@ -94,3 +94,56 @@ def create_capsule():
         "note": random.choice(NOTES),
         "creation": creation_date
     })
+
+#opening msgs
+@app.route("/view_capsule", methods =["POST"])
+def view_capsule():
+    if "user_id" not in session:
+        return jsonify({"error": "Login Required"}), 401
+    
+    user_id = session["user_id"]
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM messages WHERE user_id = ?", (user_id,))
+    capsules = cur.fetchall()
+    conn.close()
+
+    cur_time = datetime.now()
+    result = []
+
+    for i in capsules:
+        unlock_time = datetime.fromisoformat(i["unlock_date_time"])
+        is_unlocked = unlock_time <= cur_time
+
+        time_left = str(unlock_time - cur_time) if not is_unlocked else "Unlocked"
+
+        result.append({
+            "id": i["id"],
+            "message": i["message"] if is_unlocked else None,
+            "unlock_date": i["unlock_date"],
+            "created_at": i["creation_date"],
+            "unlock_status": is_unlocked,
+            "time_left": time_left
+        })
+    return jsonify(result)
+
+#delete capsule
+@app.route("/delete_capsule", methods = ["POST"])
+def delete_capsule():
+    if "user_id" not in session:
+        return jsonify({"error": "Login Required"}), 401
+    
+    data = request.json
+    capsule_id = data.get("capsule_id")
+    if not capsule_id:
+        return jsonify({"error": "Select capsule to delete"}), 400
+    
+    user_id = session["user_id"]
+    conn = get_db()
+    cur = conn.cursor()
+
+    cur.execute("DELETE FROM messages WHERE id = ? AND user_id = ?", (capsule_id, user_id))
+    conn.commit()
+    conn.close()
+    
+    return jsonify({"message": "Capsule deleted successfully"})
