@@ -5,6 +5,29 @@
     box-sizing: border-box;
 }
 
+.fuzzy-text {
+    position: relative;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    animation: fuzz 0.15s infinite;
+}
+
+@keyframes fuzz {
+    0% {
+        text-shadow: 2px 0 rgb(0, 47, 255), -2px 0 cyan;
+    }
+    33% {
+        text-shadow: -2px 0 rgb(0, 47, 255), 2px 0 cyan;
+    }
+    66% {
+        text-shadow: 0 2px rgb(0, 47, 255), 0 -2px cyan;
+    }
+    100% {
+        text-shadow: 0 0 rgb(0, 47, 255), 0 0 cyan;
+    }
+}
+
 header {
     position: absolute;
     top: 0;
@@ -98,7 +121,7 @@ header {
 .cta-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 30px;
+    padding: 18px 30px;
     font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
